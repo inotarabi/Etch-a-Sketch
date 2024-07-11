@@ -1,0 +1,68 @@
+@font-face {
+    font-family: pixel;
+    src: url(slkscr.ttf);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+}
+
+h1 {
+    font-family: pixel;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+}
+
+.color-change {
+    text-align: center;
+    border: 3px solid black;
+    width: 150px;
+    height: 300px;
+    margin-bottom: 10px;
+}
+
+.grid-change {
+    text-align: center;
+    border: 3px solid black;
+    width: 150px;
+    height: 100px;
+}
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    height: 600px;
+    padding: 0px;
+    margin: 0px;
+    border: 3px solid black;
+}
+
+.grid-cell {
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid black;
+    width: 37.5px;
+    height: 37.5px;
+    background-color: white;
+}
+
+.grid-cell:hover {
+    background-color: gray;
+}
+
+/* grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px; */
