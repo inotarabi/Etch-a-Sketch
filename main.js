@@ -11,6 +11,7 @@ const brownButton = document.querySelector("#brown");
 const purpleButton = document.querySelector("#purple");
 const whiteButton = document.querySelector("#white");
 
+const optionButtons = document.querySelector(".options");
 const shadeButton = document.querySelector("#shade");
 const lightenButton = document.querySelector("#lighten");
 
@@ -107,15 +108,29 @@ whiteButton.addEventListener("click", () => {
 });
 
 shadeButton.addEventListener("click", () => {
-    shadeButton.classList.toggle("hover");
-
     if (isShade == false) {
         isShade = true;
+        isLighten = false;
+        shadeButton.classList.add("hover");
+        lightenButton.classList.remove("hover");
     } else {
         isShade = false;
-        isLighten = false;
+        shadeButton.classList.remove("hover");
     }
     console.log(isShade);
+});
+
+lightenButton.addEventListener("click", () => {
+    if (isLighten == false) {
+        isLighten = true;
+        isShade = false;
+        lightenButton.classList.add("hover");
+        shadeButton.classList.remove("hover");
+    } else {
+        isLighten = false;
+        lightenButton.classList.remove("hover");
+    }
+    console.log(isLighten);
 });
 
 function shade() {
