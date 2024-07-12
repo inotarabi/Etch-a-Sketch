@@ -11,9 +11,19 @@ const brownButton = document.querySelector("#brown");
 const purpleButton = document.querySelector("#purple");
 const whiteButton = document.querySelector("#white");
 
+const shadeButton = document.querySelector("#shade");
+const lightenButton = document.querySelector("#lighten");
+
 let clickSound = new Audio("sounds/click.mp3");
 let isMouseDown;
 let currentColor;
+let isShade = false;
+let isLighten = false;
+
+let R;
+let G;
+let B;
+let A;
 
 enterButton.addEventListener("click", () => {
     let inputValue = gridInput.value;
@@ -26,43 +36,92 @@ resetButton.addEventListener("click", () => {
 
 redButton.addEventListener("click", () => {
     clickSound.play();
-    currentColor = "red";
+    R = 255;
+    G = 0;
+    B = 0;
+    A = 1;
+    currentColor = `rgba(${R}, ${G}, ${B}, ${A})`;
 });
 
 blueButton.addEventListener("click", () => {
     clickSound.play();
-    currentColor = "blue";
+    R = 0;
+    G = 0;
+    B = 255;
+    A = 1;
+    currentColor = `rgba(${R}, ${G}, ${B}, ${A})`;
 });
 
 yellowButton.addEventListener("click", () => {
     clickSound.play();
-    currentColor = "yellow";
+    R = 255;
+    G = 255;
+    B = 0;
+    A = 1;
+    currentColor = `rgba(${R}, ${G}, ${B}, ${A})`;
 });
 
 greenButton.addEventListener("click", () => {
     clickSound.play();
-    currentColor = "green";
+    R = 0;
+    G = 255;
+    B = 0;
+    A = 1;
+    currentColor = `rgba(${R}, ${G}, ${B}, ${A})`;
 });
 
 orangeButton.addEventListener("click", () => {
     clickSound.play();
-    currentColor = "orange";
+    R = 255;
+    G = 165;
+    B = 0;
+    A = 1;
+    currentColor = `rgba(${R}, ${G}, ${B}, ${A})`;
 });
 
 brownButton.addEventListener("click", () => {
     clickSound.play();
-    currentColor = "rgb(97, 18, 18)";
+    R = 97;
+    G = 18;
+    B = 18;
+    A = 1;
+    currentColor = `rgba(${R}, ${G}, ${B}, ${A})`;
 });
 
 purpleButton.addEventListener("click", () => {
     clickSound.play();
-    currentColor = "purple";
+    R = 160;
+    G = 32;
+    B = 240;
+    A = 1;
+    currentColor = `rgba(${R}, ${G}, ${B}, ${A})`;
 });
 
 whiteButton.addEventListener("click", () => {
     clickSound.play();
-    currentColor = "white";
+    R = 255;
+    G = 255;
+    B = 255;
+    A = 1;
+    currentColor = `rgba(${R}, ${G}, ${B}, ${A})`;
 });
+
+shadeButton.addEventListener("click", () => {
+    shadeButton.classList.toggle("hover");
+
+    if (isShade == false) {
+        isShade = true;
+    } else {
+        isShade = false;
+        isLighten = false;
+    }
+    console.log(isShade);
+});
+
+function shade() {
+    if (isShade) {
+    }
+}
 
 function createGrid(num) {
     numBoxes = num * num;
@@ -75,7 +134,7 @@ function createGrid(num) {
 
         gridCellDiv.style.width = cellsize + "px";
 
-        color(gridCellDiv, currentColor);
+        color(gridCellDiv);
     }
 }
 
