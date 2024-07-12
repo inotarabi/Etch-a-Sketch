@@ -15,6 +15,11 @@ h1 {
     text-align: center;
 }
 
+img {
+    width: 70px;
+    height: 70px;
+}
+
 #size-input {
     box-sizing: border-box;
     width: 100px;
@@ -37,6 +42,7 @@ h1 {
     width: 200px;
     height: 350px;
     margin-bottom: 10px;
+    background-color: #5b6e7c;
 }
 
 .grid-change {
@@ -47,6 +53,7 @@ h1 {
 }
 
 .grid-container {
+    background-color: white;
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
@@ -75,7 +82,10 @@ h1 {
 }
 
 button {
-    border: 3px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid rgb(255, 196, 0);
     border-radius: 7px;
     width: 72px;
     height: 74px;
@@ -84,11 +94,16 @@ button {
 }
 
 button:hover {
-    opacity: 50%;
+    opacity: 0.7;
+    border: 3px solid black;
+}
+
+button:active {
+    transform: scale(1.03);
 }
 
 #red {
-    background-color: red;
+    background-color: rgb(255, 0, 0);
 }
 
 #blue {
@@ -107,17 +122,19 @@ button:hover {
     background-color: orange;
 }
 
-#black {
-    background-color: black;
+#brown {
+    background-color: rgb(97, 18, 18);
 }
 
 #purple {
     background-color: purple;
 }
 
-#pink {
-    background-color: pink;
+#white {
+    background-color: white;
 }
 
-/* grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px;
-    grid-template-rows: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px; */
+.title {
+    font-family: pixel;
+    margin: 3px;
+}
