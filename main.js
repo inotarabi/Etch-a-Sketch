@@ -3,6 +3,8 @@ let gridInput = document.getElementById("size-input");
 const enterButton = document.querySelector("#size-enter");
 const resetButton = document.querySelector("#size-reset");
 
+let isMouseDown;
+
 enterButton.addEventListener("click", () => {
     let inputValue = gridInput.value;
     createGrid(inputValue);
@@ -21,5 +23,24 @@ function createGrid(num) {
 
         cellsize = 594 / num;
         gridCellDiv.style.width = cellsize + "px";
+
+        color(gridCellDiv);
     }
+}
+
+function color(element) {
+    element.addEventListener("mousedown", () => {
+        isMouseDown = true;
+        // element.style.backgroundColor = "red";
+    });
+
+    element.addEventListener("mouseup", () => {
+        isMouseDown = false;
+    });
+
+    element.addEventListener("mouseover", () => {
+        if (isMouseDown == true) {
+            element.style.backgroundColor = "red";
+        }
+    });
 }
