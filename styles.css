@@ -15,6 +15,11 @@ h1 {
     text-align: center;
 }
 
+#size-input {
+    box-sizing: border-box;
+    width: 100px;
+}
+
 .container {
     display: flex;
     justify-content: space-evenly;
@@ -29,7 +34,7 @@ h1 {
 .color-change {
     text-align: center;
     border: 3px solid black;
-    width: 150px;
+    width: 200px;
     height: 300px;
     margin-bottom: 10px;
 }
@@ -37,11 +42,12 @@ h1 {
 .grid-change {
     text-align: center;
     border: 3px solid black;
-    width: 150px;
+    width: 200px;
     height: 100px;
 }
 
 .grid-container {
+    box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
     width: 600px;
@@ -55,8 +61,6 @@ h1 {
     box-sizing: border-box;
     text-align: center;
     border: 1px solid black;
-    width: 37.5px;
-    height: 37.5px;
     background-color: white;
 }
 
