@@ -30,8 +30,8 @@ function createGrid(num) {
 
 function color(element) {
     element.addEventListener("mousedown", () => {
+        element.style.backgroundColor = "red";
         isMouseDown = true;
-        // element.style.backgroundColor = "red";
     });
 
     element.addEventListener("mouseup", () => {

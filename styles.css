@@ -35,7 +35,7 @@ h1 {
     text-align: center;
     border: 3px solid black;
     width: 200px;
-    height: 300px;
+    height: 350px;
     margin-bottom: 10px;
 }
 
@@ -66,6 +66,57 @@ h1 {
 
 .grid-cell:hover {
     background-color: gray;
+}
+
+.colors-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+button {
+    border: 3px solid black;
+    border-radius: 7px;
+    width: 72px;
+    height: 74px;
+    background-color: white;
+    margin: 3px;
+}
+
+button:hover {
+    opacity: 50%;
+}
+
+#red {
+    background-color: red;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+#green {
+    background-color: green;
+}
+
+#orange {
+    background-color: orange;
+}
+
+#black {
+    background-color: black;
+}
+
+#purple {
+    background-color: purple;
+}
+
+#pink {
+    background-color: pink;
 }
 
 /* grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px;
