@@ -1,7 +1,10 @@
+// grid input
 const gridContainer = document.querySelector(".grid-container");
 const gridInput = document.getElementById("size-input");
 const enterButton = document.querySelector("#size-enter");
 const resetButton = document.querySelector("#size-reset");
+
+// color buttons
 const redButton = document.querySelector("#red");
 const blueButton = document.querySelector("#blue");
 const yellowButton = document.querySelector("#yellow");
@@ -11,32 +14,34 @@ const brownButton = document.querySelector("#brown");
 const purpleButton = document.querySelector("#purple");
 const whiteButton = document.querySelector("#white");
 
-const colorButtonGeneral = document.querySelector(".colors");
+// options (work in progress)
 const shadeButton = document.querySelector("#shade");
 const lightenButton = document.querySelector("#lighten");
 
+// Misc
+const showGridLines = document.querySelector(".showLines");
+const whatColor = document.querySelector(".currentC");
+const colorButtonGeneral = document.querySelector(".colors");
+
+// sounds
 let clickSound = new Audio("sounds/click.mp3");
+
 let isMouseDown;
 let currentColor;
+
+// bools
 let isShade = false;
 let isLighten = false;
 let isColorButtonPressed = false;
-let isTileEmpty = true;
 
+// rgba coloring variables
 let rgbaArray = [];
 let R;
 let G;
 let B;
 let A = 1;
 
-function isAnyColorButtonPressed() {
-    if (isColorButtonPressed == true) {
-        return (isColorButtonPressed = false);
-    } else {
-        return (isColorButtonPressed = true);
-    }
-}
-
+// grid input event lisenter
 enterButton.addEventListener("click", () => {
     let inputValue = gridInput.value;
     createGrid(inputValue);
@@ -46,7 +51,10 @@ resetButton.addEventListener("click", () => {
     gridContainer.textContent = "";
 });
 
+// colors event lisenter
 redButton.addEventListener("click", () => {
+    whatColor.style.color = "red";
+    whatColor.textContent = "red";
     isAnyColorButtonPressed();
     clickSound.play();
     R = 255;
@@ -57,6 +65,8 @@ redButton.addEventListener("click", () => {
 });
 
 blueButton.addEventListener("click", () => {
+    whatColor.style.color = "blue";
+    whatColor.textContent = "blue";
     isAnyColorButtonPressed();
     clickSound.play();
     R = 0;
@@ -67,6 +77,8 @@ blueButton.addEventListener("click", () => {
 });
 
 yellowButton.addEventListener("click", () => {
+    whatColor.style.color = "yellow";
+    whatColor.textContent = "yellow";
     isAnyColorButtonPressed();
     clickSound.play();
     R = 255;
@@ -77,6 +89,8 @@ yellowButton.addEventListener("click", () => {
 });
 
 greenButton.addEventListener("click", () => {
+    whatColor.style.color = "green";
+    whatColor.textContent = "green";
     isAnyColorButtonPressed();
     clickSound.play();
     R = 0;
@@ -87,6 +101,8 @@ greenButton.addEventListener("click", () => {
 });
 
 orangeButton.addEventListener("click", () => {
+    whatColor.style.color = "orange";
+    whatColor.textContent = "orange";
     isAnyColorButtonPressed();
     clickSound.play();
     R = 255;
@@ -97,6 +113,8 @@ orangeButton.addEventListener("click", () => {
 });
 
 brownButton.addEventListener("click", () => {
+    whatColor.style.color = "rgb(97, 18, 18)";
+    whatColor.textContent = "brown";
     isAnyColorButtonPressed();
     clickSound.play();
     R = 97;
@@ -107,6 +125,8 @@ brownButton.addEventListener("click", () => {
 });
 
 purpleButton.addEventListener("click", () => {
+    whatColor.style.color = "purple";
+    whatColor.textContent = "purple";
     isAnyColorButtonPressed();
     clickSound.play();
     R = 160;
@@ -117,6 +137,8 @@ purpleButton.addEventListener("click", () => {
 });
 
 whiteButton.addEventListener("click", () => {
+    whatColor.style.color = "white";
+    whatColor.textContent = "eraser";
     isAnyColorButtonPressed();
     clickSound.play();
     R = 255;
@@ -126,6 +148,7 @@ whiteButton.addEventListener("click", () => {
     currentColor = `rgba(${R}, ${G}, ${B}, ${A})`;
 });
 
+// options event listener
 shadeButton.addEventListener("click", () => {
     if (isShade == false) {
         isShade = true;
@@ -151,6 +174,14 @@ lightenButton.addEventListener("click", () => {
     }
     console.log(isLighten);
 });
+
+function isAnyColorButtonPressed() {
+    if (isColorButtonPressed == true) {
+        return (isColorButtonPressed = false);
+    } else {
+        return (isColorButtonPressed = true);
+    }
+}
 
 function lighten(color) {
     rgbaArray = color.match(/\d+/g);

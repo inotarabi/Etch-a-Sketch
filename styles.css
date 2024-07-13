@@ -23,8 +23,28 @@ img {
 }
 
 #size-input {
+    font-family: pixel;
     box-sizing: border-box;
     width: 100px;
+}
+
+.inputButton {
+    color: white;
+    border-radius: 7px;
+    font-family: pixel;
+    background-color: #4f606b;
+    border: 3px solid black;
+}
+
+.inputButton:hover {
+    border-radius: 7px;
+    color: black;
+    background-color: rgb(162, 193, 212);
+    border: 3px solid black;
+}
+
+.inputButton:active {
+    transform: scale(1.05);
 }
 
 .container {
@@ -42,7 +62,7 @@ img {
     text-align: center;
     border: 3px solid black;
     border-radius: 7px;
-    width: 200px;
+    width: 220px;
     height: 500px;
     margin-bottom: 10px;
     background-color: #303a41;
@@ -52,9 +72,9 @@ img {
     text-align: center;
     border: 3px solid black;
     border-radius: 7px;
-    width: 200px;
-    height: 100px;
-    background-color: #5b6e7c;
+    width: 220px;
+    height: 75px;
+    background-color: #303a41;
 }
 
 .grid-container {
@@ -142,14 +162,14 @@ button:active {
 .title {
     color: white;
     font-family: pixel;
-    margin: 3px;
+    margin: 10px;
 }
 
 .options {
     font-family: pixel;
     background-color: #4f606b;
     color: white;
-    margin-left: 20px;
+    margin-left: 35px;
     margin-top: 10px;
     width: 150px;
     height: 50px;
@@ -168,4 +188,19 @@ button:active {
     color: black;
     background-color: rgb(162, 193, 212);
     border: 3px solid black;
+}
+
+.current-color {
+    font-family: pixel;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid black;
+    border-radius: 7px;
+    width: 220px;
+    height: 75px;
+    margin-bottom: 10px;
+    background-color: #303a41;
+    color: white;
 }
