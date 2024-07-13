@@ -44,6 +44,7 @@ let A = 1;
 // grid input event lisenter
 enterButton.addEventListener("click", () => {
     let inputValue = gridInput.value;
+    gridContainer.textContent = "";
     createGrid(inputValue);
 });
 
